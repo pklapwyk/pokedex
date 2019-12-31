@@ -13,6 +13,10 @@ app.get("/", (req,res) => {
     res.render("index", {});
 });
 
+app.get("/pokemon", (req,res) => {
+    res.render("pokemon", {});
+});
+
 //Listening Port
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
