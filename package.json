@@ -1,0 +1,17 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "Homemade Pokedex for Personal Use",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
+  },
+  "author": "Paul K",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2",
+    "pug": "^2.0.4"
+  }
+}
