@@ -1,11 +1,9 @@
 window.onload = function () {
-    fetch('/pokemon.json')
-        .then(function (response) {
-            return response.json();
+    fetch("/pokemon")
+    .then(function (response) {
+        return response.json();
+    })
+        .then(function (content) {
+            console.log(content)
         })
-        .then(function () {
-            let obj = content
-            console.log(obj)
-        }
-
-)}
+}

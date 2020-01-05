@@ -10,10 +10,14 @@ app.set("view engine", "pug");
 app.use(express.static("public"));
 
 //Read JSON file
-const content = fs.readFileSync("public/pokemon.json", "utf8")
-const pokemon = JSON.parse(content)
-console.log(content)
-
+const content = fs.readFileSync("public/pokemon.json", "utf8");
+//console.log(content)
+//const foo = require("/public/pokemon.json");
+//console.log(foo)
+//console.log(content)
+//const pokemon = JSON.parse(content)
+//console.log(pokemon)
+//app.locals.SampleData = require('public/pokemon.json');
 
 //Pages
 app.get("/", (req,res) => {
@@ -22,15 +26,18 @@ app.get("/", (req,res) => {
 
 app.get("/pokemon", (req,res) => {
     res.render("pokemon")
+    res.json(content)
 });
 
 app.get("/pokemon.json", (req,res) =>{
-    if (err) {
-        console.log(err)
-    } else {
-        res.json(content)
-    }
+    res.send(JSON.stringify(content))
+    console.log(content)
 });
+
+//app.get('/pokemon.json', function (req, res) {
+//    res.header("Content-Type", 'application/json');
+//    res.send(JSON.stringify(data));
+//})
 
 //Listening Port
 app.listen(port, () => {
